@@ -37,7 +37,7 @@ namespace ForzaHorizon4Helper
 
         private static void CalculateRearWeight(TextBox textbox, double min, double max, int front)
         {
-            textbox.Text = Math.Round((max - min) * (100 - front) / 100 + 1, 3).ToString();
+            textbox.Text = Math.Round((max - min) * (100 - front) / 100 + min, 3).ToString();
         }
 
         private enum Side
