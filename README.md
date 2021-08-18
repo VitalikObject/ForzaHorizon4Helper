@@ -1,6 +1,6 @@
 # Forza Horizon 4 Helper
 This app will help you tune your car easily with a few clicks.
-With this app you can calculate your springs dampeners and anti-roll bars.
+With this app you can calculate your springs, dampeners and anti-roll bars.
 
 ## Usage
 At first you need to type your frontal weight, It can be found in car stats
