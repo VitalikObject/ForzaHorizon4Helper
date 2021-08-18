@@ -10,43 +10,53 @@ namespace ForzaHorizon4Helper
         public static void Calculate(TextBox textbox, ComboBox comboBox, double min, double max, string front)
         {
             _front = ToInt32(front);
-            if (comboBox.SelectedItem.ToString() == comboBox.Items[0].ToString())
+
+            if (_front <= 0 || _front > 100)
             {
-                CalculateFrontWeight(textbox, min, max, _front);
+                MessageBox.Show("Entered unusable number!", "Error occurred!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            else if (comboBox.SelectedItem.ToString() == comboBox.Items[1].ToString())
+
+            switch(comboBox.Items.IndexOf(comboBox.SelectedItem))
             {
-                CalculateRearWeight(textbox, min, max, _front);
-            }
-            else
-            {
-                MessageBox.Show("Selected type doesn't exist!", "Error occurred!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                case (int)Side.Front:
+                    CalculateFrontWeight(textbox, min, max, _front);
+                    break;
+                case (int)Side.Rear:
+                    CalculateRearWeight(textbox, min, max, _front);
+                    break;
+                default:
+                    MessageBox.Show("Selected type doesn't exist!", "Error occurred!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
             }
         }
         private static void CalculateFrontWeight(TextBox textbox, double min, double max, int front)
         {
-            textbox.Text = _front != -1 ? Math.Round((max - min) * Format(_front) + min, 3).ToString() : "";
+            textbox.Text = Math.Round((max - min) * Format(_front) + min, 3).ToString();
         }
 
         private static void CalculateRearWeight(TextBox textbox, double min, double max, int front)
         {
-            textbox.Text = _front != -1 ? Math.Round((max - min) * Format(100 - _front) + 1, 3).ToString() : "";
+            textbox.Text = Math.Round((max - min) * Format(100 - _front) + 1, 3).ToString();
         }
 
         private static int ToInt32(string value)
         {
             int number;
             if (!Int32.TryParse(value, out number))
-            {
-                MessageBox.Show("Please enter an integer value!", "Error occurred!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return -1;
-            }
             return number;
         }
 
         private static double Format(int front)
         {
             return Convert.ToDouble("0." + front.ToString());
+        }
+
+        private enum Side
+        {
+            Front = 0,
+            Rear = 1
         }
     }
 }
