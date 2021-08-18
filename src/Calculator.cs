@@ -9,31 +9,28 @@ namespace ForzaHorizon4Helper
 
         public static void Calculate(TextBox textbox, ComboBox comboBox, double min, double max, string front)
         {
+            _front = ToInt32(front);
             if (comboBox.SelectedItem.ToString() == comboBox.Items[0].ToString())
             {
-                CalculateFrontWeight(textbox, min, max, front);
+                CalculateFrontWeight(textbox, min, max, _front);
             }
             else if (comboBox.SelectedItem.ToString() == comboBox.Items[1].ToString())
             {
-                CalculateRearWeight(textbox, min, max, front);
+                CalculateRearWeight(textbox, min, max, _front);
             }
             else
             {
                 MessageBox.Show("Selected type doesn't exist!", "Error occurred!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private static void CalculateFrontWeight(TextBox textbox, double min, double max, string front)
+        private static void CalculateFrontWeight(TextBox textbox, double min, double max, int front)
         {
-            _front = ToInt32(front);
-
             textbox.Text = _front != -1 ? Math.Round((max - min) * Format(_front) + min, 3).ToString() : "";
         }
 
-        private static void CalculateRearWeight(TextBox textbox, double min, double max, string front)
+        private static void CalculateRearWeight(TextBox textbox, double min, double max, int front)
         {
-            _front = ToInt32(front);
-
-            textbox.Text = _front != -1 ? Math.Round((max - min) * Format(100 - _front) + min, 3).ToString() : "";
+            textbox.Text = _front != -1 ? Math.Round((max - min) * Format(100 - _front) + 1, 3).ToString() : "";
         }
 
         private static int ToInt32(string value)
