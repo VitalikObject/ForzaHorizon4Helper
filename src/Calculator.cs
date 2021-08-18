@@ -1,15 +1,15 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ForzaHorizon4Helper
 {
     public static class Calculator
     {
-        private static int _front { get; set; }
-
         public static void Calculate(TextBox textbox, ComboBox comboBox, double min, double max, string front)
         {
-            _front = ToInt32(front);
+            int _front;
+            Int32.TryParse(front, out _front);
 
             if (_front <= 0 || _front > 100)
             {
@@ -30,22 +30,15 @@ namespace ForzaHorizon4Helper
                     break;
             }
         }
+
         private static void CalculateFrontWeight(TextBox textbox, double min, double max, int front)
         {
-            textbox.Text = Math.Round((max - min) * Format(_front) + min, 3).ToString();
+            textbox.Text = Math.Round((max - min) * Format(front) + min, 3).ToString();
         }
 
         private static void CalculateRearWeight(TextBox textbox, double min, double max, int front)
         {
-            textbox.Text = Math.Round((max - min) * Format(100 - _front) + 1, 3).ToString();
-        }
-
-        private static int ToInt32(string value)
-        {
-            int number;
-            if (!Int32.TryParse(value, out number))
-                return -1;
-            return number;
+            textbox.Text = Math.Round((max - min) * Format(100 - front) + 1, 3).ToString();
         }
 
         private static double Format(int front)
