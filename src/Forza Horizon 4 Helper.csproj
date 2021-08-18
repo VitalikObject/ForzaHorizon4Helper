@@ -5,7 +5,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>ForzaHorizon4Helper</RootNamespace>
     <UseWindowsForms>true</UseWindowsForms>
-    <ApplicationIcon>C:\Users\Vitalik\source\repos\Forza Horizon 4 Helper\Forza Horizon 4 Helper\Resources\forza horizon 4.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\forza horizon 4.ico</ApplicationIcon>
   </PropertyGroup>
 
 </Project>
