@@ -5,7 +5,7 @@ namespace ForzaHorizon4Helper
 {
     public static class Calculator
     {
-        public static double Calculate(ComboBox comboBox, double min, double max, int front)
+        public static double Calculate(ComboBox comboBox, double min, double max, double front)
         {
             switch(comboBox.Items.IndexOf(comboBox.SelectedItem))
             {
@@ -20,12 +20,12 @@ namespace ForzaHorizon4Helper
             return 0;
         }
 
-        private static double CalculateFrontWeight(double min, double max, int front)
+        private static double CalculateFrontWeight(double min, double max, double front)
         {
             return Math.Round((max - min) * front / 100 + min, 3);
         }
 
-        private static double CalculateRearWeight(double min, double max, int front)
+        private static double CalculateRearWeight(double min, double max, double front)
         {
             return Math.Round((max - min) * (100 - front) / 100 + min, 3);
         }

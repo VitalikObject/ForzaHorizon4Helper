@@ -12,7 +12,7 @@ namespace ForzaHorizon4Helper
 
         private void button1_Click(object sender, EventArgs e)
         {
-            textBox2.Text = Calculator.Calculate(comboBox1, Convert.ToDouble(textBox3.Text), Convert.ToDouble(textBox4.Text), Convert.ToInt32(textBox1.Text)).ToString();
+            textBox2.Text = Calculator.Calculate(comboBox1, Convert.ToDouble(textBox3.Text), Convert.ToDouble(textBox4.Text), Convert.ToDouble(textBox1.Text)).ToString();
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
