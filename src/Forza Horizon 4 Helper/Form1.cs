@@ -12,7 +12,14 @@ namespace ForzaHorizon4Helper
 
         private void button1_Click(object sender, EventArgs e)
         {
-            textBox2.Text = Calculator.Calculate(comboBox1, Convert.ToDouble(textBox3.Text), Convert.ToDouble(textBox4.Text), Convert.ToDouble(textBox1.Text)).ToString();
+            if (textBox1.Text != String.Empty && textBox3.Text != String.Empty && textBox4.Text != String.Empty)
+            {
+                textBox2.Text = Calculator.Calculate(comboBox1, Convert.ToDouble(textBox3.Text), Convert.ToDouble(textBox4.Text), Convert.ToDouble(textBox1.Text)).ToString();
+            }
+            else
+            {
+                MessageBox.Show("Enter a number!", "Error occurred!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }  
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)

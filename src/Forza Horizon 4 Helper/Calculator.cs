@@ -5,7 +5,7 @@ namespace ForzaHorizon4Helper
 {
     public static class Calculator
     {
-        public static double Calculate(ComboBox comboBox, double min, double max, double front)
+        public static double? Calculate(ComboBox comboBox, double min, double max, double front)
         {
             switch(comboBox.Items.IndexOf(comboBox.SelectedItem))
             {
@@ -17,7 +17,7 @@ namespace ForzaHorizon4Helper
                     MessageBox.Show("Selected type doesn't exist!", "Error occurred!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
             }
-            return 0;
+            return null;
         }
 
         private static double CalculateFrontWeight(double min, double max, double front)
