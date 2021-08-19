@@ -104,6 +104,7 @@ namespace ForzaHorizon4Helper
             "rear weight"});
             this.comboBox1.Location = new System.Drawing.Point(275, 60);
             this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Text = "front weight";
             this.comboBox1.Size = new System.Drawing.Size(121, 23);
             this.comboBox1.TabIndex = 7;
             this.comboBox1.ValueMember = "0";

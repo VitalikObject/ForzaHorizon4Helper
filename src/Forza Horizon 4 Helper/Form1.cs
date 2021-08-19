@@ -12,26 +12,14 @@ namespace ForzaHorizon4Helper
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int front;
-            double min;
-            double max;
-            Int32.TryParse(textBox1.Text, out front);
-            Double.TryParse(textBox3.Text, out min);
-            Double.TryParse(textBox4.Text, out max);
-
-            if (front <= 0 || front > 100)
-            {
-                MessageBox.Show("Entered unusable number!", "Error occurred!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            textBox2.Text = Calculator.Calculate(comboBox1, min, max, front).ToString();
+            textBox2.Text = Calculator.Calculate(comboBox1, Convert.ToDouble(textBox3.Text), Convert.ToDouble(textBox4.Text), Convert.ToInt32(textBox1.Text)).ToString();
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             IsAllowedSymbol(e);
         }
+
         private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
         {
             IsAllowedSymbol(e);
