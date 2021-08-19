@@ -27,5 +27,28 @@ namespace ForzaHorizon4Helper
 
             textBox2.Text = Calculator.Calculate(comboBox1, min, max, front).ToString();
         }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            IsAllowedSymbol(e);
+        }
+        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            IsAllowedSymbol(e);
+        }
+
+        private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            IsAllowedSymbol(e);
+        }
+
+        private void IsAllowedSymbol(KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+            if (!Char.IsDigit(number) && number != 8 && number != 44 && number != 46)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

@@ -72,6 +72,7 @@ namespace ForzaHorizon4Helper
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(169, 27);
             this.textBox1.TabIndex = 4;
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // label2
             // 
@@ -103,7 +104,6 @@ namespace ForzaHorizon4Helper
             "rear weight"});
             this.comboBox1.Location = new System.Drawing.Point(275, 60);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Text = "front weight";
             this.comboBox1.Size = new System.Drawing.Size(121, 23);
             this.comboBox1.TabIndex = 7;
             this.comboBox1.ValueMember = "0";
@@ -125,6 +125,7 @@ namespace ForzaHorizon4Helper
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(169, 27);
             this.textBox3.TabIndex = 9;
+            this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
             // 
             // label4
             // 
@@ -143,6 +144,7 @@ namespace ForzaHorizon4Helper
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(169, 27);
             this.textBox4.TabIndex = 11;
+            this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
             // 
             // Form1
             // 
